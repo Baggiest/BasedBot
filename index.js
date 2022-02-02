@@ -129,7 +129,7 @@ client.on('messageCreate', async message => {
                     exeCommand(command, message, args);
                 }
             } else if (command.needsadmin) {
-                if (currentMember.permissions.has(['ADMINISTRATOR']) || message.author.id == ownerID) {
+                if (currentMember.permissions.has(['ADMINISTRATOR']) || message.author.id === ownerID) {
                     exeCommand(command, message, args);
                     return;
                 } else {
