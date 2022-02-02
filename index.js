@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 const Discord = require('discord.js');
 const client = new Discord.Client({ intents: [Discord.Intents.FLAGS.GUILDS, Discord.Intents.FLAGS.GUILD_MESSAGES, Discord.Intents.FLAGS.GUILD_BANS, Discord.Intents.FLAGS.GUILD_EMOJIS_AND_STICKERS, Discord.Intents.FLAGS.GUILD_INTEGRATIONS, Discord.Intents.FLAGS.GUILD_WEBHOOKS, Discord.Intents.FLAGS.GUILD_PRESENCES, Discord.Intents.FLAGS.GUILD_MEMBERS, Discord.Intents.FLAGS.GUILD_MESSAGE_REACTIONS, Discord.Intents.FLAGS.GUILD_MESSAGE_REACTIONS, Discord.Intents.FLAGS.DIRECT_MESSAGES, Discord.Intents.FLAGS.DIRECT_MESSAGE_REACTIONS] });
@@ -15,6 +16,38 @@ for (const file of commandFiles) {
     const command = require(`./commands/${file}`);
     client.commands.set(command.name, command);
 }
+
+
+
+
+
+let users;
+
+
+
+async function basedMf() {
+
+}
+
+let server = client.guilds.cache.get('883245986166759434');
+
+
+
+client.on("ready", () => {
+    const Guilds = client.guilds.cache.map(guild => guild.id);
+    let users = Guilds;
+    console.log(Guilds); 
+    var userCount = guild.memberCount;
+
+    for (let i of Guilds) {
+        console.log("seggz")
+        console.log(userCount)
+        //server.members.forEach(member => console.log(member.user.username)); 
+    }
+});
+
+
+
 
 
 async function exeCommand(command, message, args) {
